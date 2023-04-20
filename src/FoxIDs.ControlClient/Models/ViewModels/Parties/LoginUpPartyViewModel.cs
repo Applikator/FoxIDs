@@ -14,6 +14,10 @@ namespace FoxIDs.Client.Models.ViewModels
         [Display(Name = "Up-party name")]
         public string Name { get; set; }
 
+        [MaxLength(Constants.Models.Party.NoteLength)]
+        [Display(Name = "Your notes")]
+        public string Note { get; set; }
+
         /// <summary>
         /// Default 10 hours.
         /// </summary>
@@ -124,5 +128,7 @@ namespace FoxIDs.Client.Models.ViewModels
         [RegularExpression(Constants.Models.UpParty.HrdLogoUrlRegExPattern)]
         [Display(Name = "HRD logo URL")]
         public string HrdLogoUrl { get; set; }
+
+        public CreateUserViewModel CreateUser { get; set; } = new CreateUserViewModel();
     }
 }

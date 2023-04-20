@@ -1,4 +1,5 @@
 ﻿using FoxIDs.Infrastructure.DataAnnotations;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,6 +11,9 @@ namespace FoxIDs.Models.Api
         [MaxLength(Constants.Models.Party.NameLength)]
         [RegularExpression(Constants.Models.Party.NameRegExPattern)]
         public string Name { get; set; }
+
+        [MaxLength(Constants.Models.Party.NoteLength)]
+        public string Note { get; set; }
 
         /// <summary>
         /// Default false.
@@ -124,5 +128,7 @@ namespace FoxIDs.Models.Api
         [RegularExpression(Constants.Models.UpParty.HrdLogoUrlRegExPattern)]
         [Display(Name = "HRD logo URL")]
         public string HrdLogoUrl { get; set; }
+
+        public CreateUser CreateUser { get; set; }
     }
 }

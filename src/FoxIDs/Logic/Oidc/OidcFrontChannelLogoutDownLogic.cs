@@ -33,6 +33,7 @@ namespace FoxIDs.Logic
 
         public async Task<IActionResult> LogoutRequestAsync(IEnumerable<string> partyIds, SingleLogoutSequenceData sequenceData, bool hostedInIframe, bool doSamlLogoutInIframe)
         {
+            logger.ScopeTrace(() => "Down, OIDC Front Channel logout request.");
             var frontChannelLogoutRequest = new FrontChannelLogoutRequest
             {
                 Issuer = trackIssuerLogic.GetIssuer(),
@@ -93,7 +94,7 @@ namespace FoxIDs.Logic
 
         private string GetFrontChannelLogoutDoneUrl(SingleLogoutSequenceData sequenceData, TParty firstParty)
         {
-            return HttpContext.GetDownPartyUrl(firstParty.Name, sequenceData.UpPartyName, Constants.Routes.OAuthController, Constants.Endpoints.FrontChannelLogoutDone, includeSequence: true);
+            return HttpContext.GetDownPartyUrl(firstParty.Name, sequenceData.UpPartyName, Constants.Routes.OAuthController, Constants.Endpoints.FrontChannelLogoutDone, includeSequence: true, firstParty.PartyBindingPattern);
         }
 
         public Task<IActionResult> LogoutDoneAsync()

@@ -6,6 +6,8 @@ Where Context Handler is either a SAML 2.0 [Identity Provider (IdP)](#configurin
 
 Context Handler is a Danish Identity Provider (IdP) connecting the Danish municipalities in a common federation. Context Handler can be configured based on either OIOSAML 2 or OIOSAML 3. FoxIDs support both OIOSAML 2 / OIOSAML 3, issuer naming, required certificates and it is possible to support NSIS.
 
+> Transforms the [DK privilege XML claim](claim-transform-dk-privilege.md) to a JSON claim.
+
 Context Handler documentation and configuration:
 - The [Context Handler get started](https://digitaliseringskataloget.dk/l%C3%B8sninger/adgangsstyring-brugere).
 - The [Context Handler administration portal](https://serviceplatformen.dk/administration/) 
@@ -16,7 +18,7 @@ Context Handler documentation and configuration:
 
 Context Handler requires the Relying Party (RP) and Identity Provider (IdP) to use different OSES certificates. Therefore, consider connecting Context Handler in separate tracks where the OCES certificates can be configured without affecting any other configurations.
 
-Two FoxIDs tracks can be connected with OpenID Connect. Please see the [connect FoxIDs with OpenID Connect](up-party-howto-oidc-foxids.md) guide. The track with a up-party connected to Context Handler is called the parallel FoxIDs track in the guide.
+Two FoxIDs tracks can be connected with OpenID Connect. Please see the [connect FoxIDs with OpenID Connect](howto-oidc-foxids.md) guide. The track with a up-party connected to Context Handler is called the parallel FoxIDs track in the guide.
 
 ## Certificate
 

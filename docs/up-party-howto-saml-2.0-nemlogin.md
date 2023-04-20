@@ -6,6 +6,8 @@ FoxIDs can be connected to NemLog-in (Danish IdP) with a [up-party SAML 2.0](up-
 
 NemLog-in (currently called NemLog-in3) is a Danish Identity Provider (IdP) which uses the SAML 2.0 based OIOSAML 3. FoxIDs support NemLog-in / OIOSAML 3 including logging, issuer naming, required certificates and it is possible to support NSIS.
 
+> Transforms the [DK privilege XML claim](claim-transform-dk-privilege.md) to a JSON claim.
+
 NemLog-in documentation and configuration:
 - The [NemLog-in development portal](https://tu.nemlog-in.dk/oprettelse-og-administration-af-tjenester/) with documentation
   - [test](https://tu.nemlog-in.dk/oprettelse-og-administration-af-tjenester/log-in/dokumentation-og-guides/integrationstestmiljo/), where you can find the NemLog-in IdP-metadata for test and FOCES2 / OCES3 test certificates
@@ -23,7 +25,7 @@ NemLog-in documentation and configuration:
 
 NemLog-in requires the Relying Party (RP) to use a OSES certificate and a high level of logging. Therefore, consider connecting NemLog-in in a separate track where the OCES certificate and log level can be configured without affecting any other configuration.
 
-Two FoxIDs tracks can be connected with OpenID Connect. Please see the [connect FoxIDs with OpenID Connect](up-party-howto-oidc-foxids.md) guide. The track with a up-party connected to NemLog-in is called the parallel FoxIDs track in the guide.
+Two FoxIDs tracks can be connected with OpenID Connect. Please see the [connect FoxIDs with OpenID Connect](howto-oidc-foxids.md) guide. The track with a up-party connected to NemLog-in is called the parallel FoxIDs track in the guide.
 
 ## Certificate
 
